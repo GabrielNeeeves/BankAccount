@@ -33,7 +33,8 @@ public class UserAccount {
 	//DEPOSIT method
 	public void deposit(double depositVal) {
 		this.currentValue += depositVal;
-		System.out.println(depositVal+" have been added. Total is: R$"+this.currentValue);
+		System.out.println();
+		System.out.printf("R$%.2f have been added. Total is R$%.2f \n", depositVal, currentValue);
 		return;
 	}
 	
@@ -41,6 +42,7 @@ public class UserAccount {
 	public void draft(double draftVal) {
 		if(draftVal <= this.currentValue) {
 			this.currentValue -= draftVal;
+			System.out.printf("You took R$%.2f from your account. Total is R$%.2f \n",draftVal, currentValue);
 		}
 		else {
 			System.out.println("Insufficient funding. Try again.");
@@ -51,6 +53,6 @@ public class UserAccount {
 	//DISPLAY account information
 	public void displayCurrentValue() {
 		System.out.println("Username: "+username);
-		System.out.println("You have a total of R$"+currentValue);
+		System.out.printf("You have a total of R$%.2f \n", currentValue);
 	}
 }
